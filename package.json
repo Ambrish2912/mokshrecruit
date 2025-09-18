@@ -1,12 +1,13 @@
 {
-  "name": "recruit-web",
+  "name": "moksh-recruit-web",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Moksh Recruit Tech Website",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "cd my-app && npm run dev",
+    "build": "cd my-app && npm run build",
+    "start": "cd my-app && npm run preview"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "keywords": ["react", "vite", "recruitment"],
+  "author": "Moksh Recruit Tech",
+  "license": "MIT"
 }
