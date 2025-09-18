@@ -28,7 +28,7 @@
     "react-router-dom": "^7.9.1",
     "react-top-loading-bar": "^3.0.2",
     "tailwindcss": "^4.1.13",
-    "three": "^0.180.0"
+    "three": "^0.150.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",

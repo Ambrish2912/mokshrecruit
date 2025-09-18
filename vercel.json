@@ -1,7 +1,7 @@
 {
-  "buildCommand": "cd my-app && npm ci && npm run build",
+  "buildCommand": "cd my-app && npm run build",
   "outputDirectory": "my-app/dist",
-  "installCommand": "npm install --prefix ./my-app",
+  "installCommand": "npm install --prefix ./my-app --legacy-peer-deps",
   "devCommand": "cd my-app && npm run dev",
   "rewrites": [
     {
