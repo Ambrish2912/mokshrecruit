@@ -1,10 +1,34 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import LoadingBar from 'react-top-loading-bar';
 import Hero from '../components/Hero';
 import StackingCards from '../components/StackingCards';
 
 const Home = () => {
+  const loadingBarRef = useRef(null);
+
+  useEffect(() => {
+    // Simulate page loading
+    if (loadingBarRef.current) {
+      loadingBarRef.current.continuousStart();
+      setTimeout(() => {
+        if (loadingBarRef.current) {
+          loadingBarRef.current.complete();
+        }
+      }, 1200);
+    }
+  }, []);
+
   return (
     <>
+      {/* Page Loading Bar */}
+      <LoadingBar
+        color="#39608f"
+        ref={loadingBarRef}
+        height={3}
+        shadow={true}
+        transitionTime={300}
+      />
+      
       <Hero />
       <StackingCards />
       

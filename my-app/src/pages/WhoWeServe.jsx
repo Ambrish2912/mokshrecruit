@@ -1,8 +1,32 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import LoadingBar from 'react-top-loading-bar';
 
 const WhoWeServe = () => {
+  const loadingBarRef = useRef(null);
+
+  useEffect(() => {
+    // Simulate page loading
+    if (loadingBarRef.current) {
+      loadingBarRef.current.continuousStart();
+      setTimeout(() => {
+        if (loadingBarRef.current) {
+          loadingBarRef.current.complete();
+        }
+      }, 1000);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
+      {/* Page Loading Bar */}
+      <LoadingBar
+        color="#39608f"
+        ref={loadingBarRef}
+        height={3}
+        shadow={true}
+        transitionTime={300}
+      />
+      
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-[#d3e4ff] to-[#e8f2ff] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

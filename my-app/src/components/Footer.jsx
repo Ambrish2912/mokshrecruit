@@ -13,10 +13,18 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-[#184974] text-white">
+    <footer className="bg-[#184974] text-white relative overflow-hidden">
+      {/* Custom Aurora Background Effect with Theme Colors */}
+      <div className="absolute inset-0 aurora-container">
+        <div className="aurora-layer aurora-layer-1"></div>
+        <div className="aurora-layer aurora-layer-2"></div>
+        <div className="aurora-layer aurora-layer-3"></div>
+        <div className="aurora-layer aurora-layer-4"></div>
+      </div>
+      
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
            {/* Company Info */}
            <div className="space-y-6">
@@ -34,17 +42,17 @@ const Footer = () => {
                </p>
              </div>
             <div className="flex space-x-4">
-              <a href="#" className="bg-blue-600 hover:bg-blue-500 p-2 rounded-full transition-colors duration-300">
-                <Facebook size={18} />
+              <a href="#" className="bg-white/20 hover:bg-[#39608f] backdrop-blur-sm border border-white/30 p-3 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-400/50">
+                <Facebook size={18} className="text-white" />
               </a>
-              <a href="#" className="bg-blue-600 hover:bg-blue-500 p-2 rounded-full transition-colors duration-300">
-                <Twitter size={18} />
+              <a href="#" className="bg-white/20 hover:bg-[#39608f] backdrop-blur-sm border border-white/30 p-3 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-400/50">
+                <Twitter size={18} className="text-white" />
               </a>
-              <a href="#" className="bg-blue-600 hover:bg-blue-500 p-2 rounded-full transition-colors duration-300">
-                <Linkedin size={18} />
+              <a href="#" className="bg-white/20 hover:bg-[#39608f] backdrop-blur-sm border border-white/30 p-3 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-400/50">
+                <Linkedin size={18} className="text-white" />
               </a>
-              <a href="#" className="bg-blue-600 hover:bg-blue-500 p-2 rounded-full transition-colors duration-300">
-                <Instagram size={18} />
+              <a href="#" className="bg-white/20 hover:bg-[#39608f] backdrop-blur-sm border border-white/30 p-3 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-400/50">
+                <Instagram size={18} className="text-white" />
               </a>
             </div>
           </div>
@@ -135,9 +143,9 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Enter email"
-                  className="w-48 px-3 py-2 rounded-lg text-sm border-0 focus:ring-2 focus:ring-blue-400 focus:outline-none text-gray-700 placeholder-gray-400 bg-white"
+                  className="w-48 px-3 py-2 rounded-lg text-sm border border-white/30 focus:ring-2 focus:ring-blue-400 focus:outline-none text-gray-700 placeholder-gray-400 bg-white/90 backdrop-blur-sm focus:bg-white transition-all duration-300"
                 />
-                <button className="bg-[#39608f] hover:bg-[#2d4a6f] text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-300 whitespace-nowrap">
+                <button className="bg-[#39608f]/90 hover:bg-[#2d4a6f] backdrop-blur-sm border border-white/30 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 whitespace-nowrap hover:scale-105 hover:shadow-lg hover:shadow-blue-400/50">
                   Subscribe
                 </button>
               </div>
@@ -167,6 +175,124 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+      {/* Custom Aurora Animation CSS */}
+      <style>{`
+        .aurora-container {
+          background: linear-gradient(45deg, #184974, #2d4a6f, #39608f);
+          animation: aurora-base 20s ease-in-out infinite;
+        }
+        
+        .aurora-layer {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          mix-blend-mode: screen;
+        }
+        
+        .aurora-layer-1 {
+          background: radial-gradient(ellipse 80% 50% at 20% 30%, rgba(57, 96, 143, 0.6) 0%, transparent 70%);
+          animation: aurora-flow-1 25s ease-in-out infinite;
+        }
+        
+        .aurora-layer-2 {
+          background: radial-gradient(ellipse 60% 40% at 80% 70%, rgba(45, 74, 111, 0.5) 0%, transparent 60%);
+          animation: aurora-flow-2 30s ease-in-out infinite reverse;
+        }
+        
+        .aurora-layer-3 {
+          background: radial-gradient(ellipse 70% 30% at 50% 20%, rgba(66, 153, 225, 0.4) 0%, transparent 50%);
+          animation: aurora-flow-3 35s ease-in-out infinite;
+        }
+        
+        .aurora-layer-4 {
+          background: radial-gradient(ellipse 50% 60% at 70% 80%, rgba(24, 73, 116, 0.3) 0%, transparent 40%);
+          animation: aurora-flow-4 40s ease-in-out infinite reverse;
+        }
+        
+        @keyframes aurora-base {
+          0%, 100% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+        }
+        
+        @keyframes aurora-flow-1 {
+          0%, 100% {
+            transform: translateX(0%) translateY(0%) scale(1) rotate(0deg);
+            opacity: 0.6;
+          }
+          25% {
+            transform: translateX(-30%) translateY(-20%) scale(1.2) rotate(5deg);
+            opacity: 0.8;
+          }
+          50% {
+            transform: translateX(20%) translateY(-10%) scale(0.9) rotate(-3deg);
+            opacity: 0.4;
+          }
+          75% {
+            transform: translateX(-10%) translateY(15%) scale(1.1) rotate(2deg);
+            opacity: 0.7;
+          }
+        }
+        
+        @keyframes aurora-flow-2 {
+          0%, 100% {
+            transform: translateX(0%) translateY(0%) scale(1) rotate(0deg);
+            opacity: 0.5;
+          }
+          33% {
+            transform: translateX(25%) translateY(-25%) scale(1.3) rotate(-4deg);
+            opacity: 0.7;
+          }
+          66% {
+            transform: translateX(-35%) translateY(10%) scale(0.8) rotate(6deg);
+            opacity: 0.3;
+          }
+        }
+        
+        @keyframes aurora-flow-3 {
+          0%, 100% {
+            transform: translateX(0%) translateY(0%) scale(1) rotate(0deg);
+            opacity: 0.4;
+          }
+          40% {
+            transform: translateX(40%) translateY(-30%) scale(1.4) rotate(8deg);
+            opacity: 0.6;
+          }
+          80% {
+            transform: translateX(-20%) translateY(20%) scale(0.7) rotate(-5deg);
+            opacity: 0.2;
+          }
+        }
+        
+        @keyframes aurora-flow-4 {
+          0%, 100% {
+            transform: translateX(0%) translateY(0%) scale(1) rotate(0deg);
+            opacity: 0.3;
+          }
+          50% {
+            transform: translateX(-15%) translateY(-15%) scale(1.2) rotate(3deg);
+            opacity: 0.5;
+          }
+        }
+        
+        /* Enhanced glass effects for Aurora background */
+        .bg-white\\/10 {
+          background: rgba(255, 255, 255, 0.15);
+          backdrop-filter: blur(12px);
+          border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+        
+        /* Social icon glow effects */
+        .bg-white\\/20:hover {
+          background: rgba(57, 96, 143, 0.8);
+          box-shadow: 0 0 25px rgba(66, 153, 225, 0.6);
+          transform: scale(1.1);
+        }
+      `}</style>
     </footer>
   );
 };

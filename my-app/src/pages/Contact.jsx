@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { MapPin, Phone, Mail, Clock, Send, MessageCircle, Sparkles } from 'lucide-react';
+import LoadingBar from 'react-top-loading-bar';
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [formData, setFormData] = useState({ firstName: '', lastName: '', email: '', mobile: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const loadingBarRef = useRef(null);
 
   useEffect(() => {
     setIsVisible(true);
@@ -17,8 +19,19 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    
+    // Start loading bar
+    if (loadingBarRef.current) {
+      loadingBarRef.current.continuousStart();
+    }
+    
     // Simulate form submission
     setTimeout(() => {
+      // Complete loading bar
+      if (loadingBarRef.current) {
+        loadingBarRef.current.complete();
+      }
+      
       setIsSubmitting(false);
       alert('Message sent successfully!');
       setFormData({ firstName: '', lastName: '', email: '', mobile: '', message: '' });
@@ -27,6 +40,15 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-white relative overflow-hidden">
+      {/* Page Loading Bar */}
+      <LoadingBar
+        color="#39608f"
+        ref={loadingBarRef}
+        height={3}
+        shadow={true}
+        transitionTime={300}
+      />
+      
       {/* Floating Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="floating-circle absolute top-20 left-10 w-20 h-20 bg-[#39608f]/10 rounded-full"></div>
