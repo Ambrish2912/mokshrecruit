@@ -102,11 +102,7 @@ const StackingCards = () => {
                           alt="Find the Right People for Your Team" 
                           className="w-full h-full object-cover rounded-2xl"
                           onError={(e) => {
-                            e.target.style.backgroundColor = '#f3f4f6';
-                            e.target.style.display = 'flex';
-                            e.target.style.alignItems = 'center';
-                            e.target.style.justifyContent = 'center';
-                            e.target.innerHTML = '<div style="color: #6b7280; font-size: 14px;">Image not found</div>';
+                            e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='320' viewBox='0 0 400 320'%3E%3Crect width='400' height='320' fill='%23f3f4f6'/%3E%3Ctext x='200' y='160' text-anchor='middle' fill='%236b7280' font-family='Arial, sans-serif' font-size='16'%3EFind the Right People%3C/text%3E%3C/svg%3E";
                           }}
                         />
                         <div className="absolute inset-0 pointer-events-none">
@@ -120,11 +116,7 @@ const StackingCards = () => {
                           alt="Launch Your Career with the Right Opportunity" 
                           className="w-full h-full object-cover rounded-2xl"
                           onError={(e) => {
-                            e.target.style.backgroundColor = '#f3f4f6';
-                            e.target.style.display = 'flex';
-                            e.target.style.alignItems = 'center';
-                            e.target.style.justifyContent = 'center';
-                            e.target.innerHTML = '<div style="color: #6b7280; font-size: 14px;">Launch.jpg not found</div>';
+                            e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='320' viewBox='0 0 400 320'%3E%3Crect width='400' height='320' fill='%23e5e7eb'/%3E%3Ctext x='200' y='160' text-anchor='middle' fill='%236b7280' font-family='Arial, sans-serif' font-size='16'%3ELaunch Your Career%3C/text%3E%3C/svg%3E";
                           }}
                         />
                         <div className="absolute inset-0 pointer-events-none">
@@ -143,11 +135,7 @@ const StackingCards = () => {
                           alt="Your Success, Our Priority" 
                           className="w-full h-full object-cover rounded-2xl"
                           onError={(e) => {
-                            e.target.style.backgroundColor = '#f3f4f6';
-                            e.target.style.display = 'flex';
-                            e.target.style.alignItems = 'center';
-                            e.target.style.justifyContent = 'center';
-                            e.target.innerHTML = '<div style="color: #6b7280; font-size: 14px;">Your.png not found</div>';
+                            e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='320' viewBox='0 0 400 320'%3E%3Crect width='400' height='320' fill='%23e5e7eb'/%3E%3Ctext x='200' y='160' text-anchor='middle' fill='%236b7280' font-family='Arial, sans-serif' font-size='16'%3EYour Success%3C/text%3E%3C/svg%3E";
                           }}
                         />
                         <div className="absolute inset-0 pointer-events-none">
